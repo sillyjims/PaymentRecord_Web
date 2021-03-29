@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hsbc.paymentrecords.mapper.PaymentMapper">
+    <select id="getPaymentList" resultType="com.hsbc.paymentrecords.model.PaymentModel">
+        SELECT currency,amount FROM payment
+    </select>
+    <insert id="insertPayment" parameterType="com.hsbc.paymentrecords.model.PaymentModel">
+        INSERT INTO payment(currency,amount) VALUES (#{currency},#{amount});
+    </insert>
+    <select id="selectPaymentByOne" parameterType="com.hsbc.paymentrecords.model.PaymentModel" resultType="String">
+       SELECT amount FROM payment
+        WHERE currency = #{currency}
+   </select>
+    <update id="updatePayment" parameterType="com.hsbc.paymentrecords.model.PaymentModel">
+        UPDATE payment
+        SET amount = #{amount}
+        WHERE currency = #{currency}
+    </update>
+</mapper>
