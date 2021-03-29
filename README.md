@@ -2,7 +2,7 @@
 
 ## Downloads
 
-支付管理后台演示地址：[国内领先的支付管理平台](https://paycloud.vip)
+git clone https://github.com/sillyjims/PaymentRecord_Web.git
 
 ## Steps
 
